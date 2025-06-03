@@ -1,0 +1,219 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 print('''                                                                        COVID-19 SELF CHECK AND GUIDANCE TOOL         \
+                                                                        -------------------------------------''')\
+print()\
+print("Welcome to our program. We are here to help you. Kindly enter your information below and we will provide guidelines for you to follow.")\
+print()\
+\
+def user_information():\
+    \
+            name=input("NAME: ")\
+            \
+            travel=input("Have you recently traveled within the last 14 days? ")\
+            if travel=='yes' or travel=='YES' or travel=='Yes':\
+                contact=input("Have you been in contact with someone known to have corona virus? ")\
+                print()\
+                if contact=='yes' or contact=='YES' or contact=='Yes':\
+                    isolation_criteria()\
+                \
+            else:\
+                contact=input("Have you been in contact with someone who has traveled and is now sick? ")\
+                print()\
+                if contact=='yes' or contact=='YES' or contact=='Yes':\
+                    isolation_criteria()\
+            print()\
+def isolation_criteria():\
+    i=input("Are you currently in isolation? ")\
+    print()\
+    if i=='no' or i=='NO' or i=='No':\
+      print('''*********************************************************************************************\
+-If you have symptoms of coronavirus, you'll usually need to self-isolate for at least 7 days.\
+\
+If you live with someone who has symptoms, you'll usually need to self-isolate for 14 days.\
+\
+If someone in your support bubble has symptoms, you'll usually need to self-isolate for 14 days.\
+***********************************************************************************************''')\
+      print()\
+      proceed=int(input("If you have read the above guidelines enter 1 to proceed "))\
+   \
+\
+def symptoms_types():\
+            print('''Are u experiencing any of the following symptoms?\
+            ----------------------\
+            1.Most common symptoms:\
+            ----------------------\
+            -fever\
+            -dry cough\
+            -tiredness\
+            ----------------------\
+            2.Less common symptoms:\
+            ----------------------\
+            -diarrhea\
+            -conjunctivitis\
+            -headache\
+            -loss of taste or smell\
+            -a rash on skin, or discolouration of fingers or toes\
+            -------------------\
+            3.Serious symptoms:\
+            -------------------\
+            -difficulty breathing or shortness of breath\
+            -chest pain or pressure\
+            -loss of speech or movement\
+            --------------------\
+            4.NONE OF THE ABOVE\
+            --------------------''')\
+            print()\
+\
+\
+def symptom_mostcommon():\
+\
+            age=int(input("Enter your age: "))\
+            temp=float(input("Enter your current body temperature (degree celsius): "))\
+            print()\
+            if (age>=18 and temp>=39) or (age<18 and temp>=38):\
+                \
+                print('''*************************************************************\
+TREATING A HIGH TEMPERATURE\
+---------------------------\
+-get lots of rest\
+-drink plenty of fluids (water is best) to avoid dehydration\
+-take paracetamol or ibuprofen if you feel uncomfortable\
+*************************************************************''')\
+            else:\
+                print("You have a normal body temperature. You do not have fever.")\
+            print()\
+            c=input("Do you have cough? ")\
+            print()\
+            if c=='yes' or c=='YES' or c=='Yes':\
+                \
+                print('''*******************************************************************************************************\
+TREATING A COUGH\
+----------------\
+-If you have a cough, it's best to avoid lying on your back. Lie on your side or sit upright instead.\
+-To help ease a cough, try having a teaspoon of honey. \
+-If this does not help, you could contact a pharmacist for advice about cough treatments.\
+*******************************************************************************************************''')\
+            print()\
+            t=input("Have you experienced excessive tiredness lately? ")\
+            print()\
+            if t=='yes' or t=='YES' or t=='Yes':\
+             print('''**********************************************\
+HOW TO DEAL WITH TIREDNESSS\
+---------------------------\
+-Eat often and try to maintain a balance diet\
+-Make sure you are getting 7-8 hours of sleep\
+-Reduce stress to boost energy\
+-Cut out caffeine\
+-Drink more water\
+**********************************************''')\
+             print()\
+\
+def symptom_lesscommon():\
+    d=input("Have you been experiencing diarrhea? ")\
+    print()\
+    if d=='yes' or d=='YES' or d=='Yes':\
+        print('''*************************************************************************************\
+To help you cope with your signs and symptoms until the diarrhea goes away, try to:\
+Drink plenty of clear liquids, including water, broths and juices.\
+Avoid caffeine.\
+Add semisolid and low-fiber foods gradually as your bowel movements return to normal.\
+*************************************************************************************''')\
+    print()\
+    c=input("Have you noticed having a pink eye lately? ")\
+    print()\
+    if c=='yes' or c=='YES' or c=='Yes':\
+        print("You are likely to have Conjunctivits. Contact your doctor who may prescribe an antibiotic, usually given typically as eye drops or ointment, for bacterial conjunctivitis.")\
+    print()\
+    h=input("Are you experiencing headaches more often than usual? ")\
+    print()\
+    if h=='yes' or h=='YES' or h=='Yes':\
+        print('''***********************************************************************************************************\
+Seek emergency care if you have:\
+\
+A very severe, sudden headache\
+Headache after a head injury or fall\
+Fever, stiff neck, rash, seizure, double vision, weakness, numbness or difficulty speaking\
+Pain that worsens despite treatment\
+These symptoms suggest a more serious condition, so it's important to get a prompt diagnosis and treatment.\
+***********************************************************************************************************''')\
+    print()\
+    r=input("Have you noticed rashes on your skin lately? ")\
+    print()\
+    if r=='yes' or r=='YES' or r=='Yes':\
+        m=input("Have you also noticed discolouration ofyour fingers or toes? ")\
+        print()\
+        if m=='yes' or m=='YES' or m=='Yes':\
+            print("Contact a dermatologist who can help you determine the cause of discolouration")\
+        else: \
+            print('''***********************************************************************************************************************************************************************************\
+Contact the nearest dermatologist. One of the fastest and easiest ways to stop the pain and itch of a rash is to apply cold.\
+Whether you choose a cold compress, cool showers, or damp cloth, cold water can bring immediate relief and can help stop swelling, ease itching, and slow the progression of a rash.\
+***********************************************************************************************************************************************************************************''')\
+        \
+\
+def symptom_serious():\
+    print('''***************************************************************\
+We strongly recommend you to seek immediate medical attention.\
+Call for an ambulance from the nearest hospital.\
+Avoid contact with anyone including family members.\
+Self-isolate yourself until you are provided medical assistance.\
+***************************************************************''')\
+ \
+     \
+def symptom_none():\
+    print('''***************************************************************************************************************************************************************************************************\
+Since you do not have any of the above symptoms you are not a COVID-19 patient but we advice you to protect yourself and others around you by knowing the facts and taking appropriate precautions.\
+Follow the advice provided by your local public health agency.\
+\
+To prevent the spread of COVID-19:\
+---------------------------------\
+-Clean your hands often. Use soap and water, or an alcohol-based hand rub.\
+-Maintain a safe distance from anyone who is coughing or sneezing.\
+-Don\'92t touch your eyes, nose or mouth.\
+-Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.\
+-Stay home if you feel unwell.\
+-If you have a fever, cough and difficulty breathing, seek medical attention. Call in advance.\
+-Follow the directions of your local health authority.\
+-Avoiding unneeded visits to medical facilities allows healthcare systems to operate more effectively, therefore protecting you and others.\
+***************************************************************************************************************************************************************************************************''')\
+    \
+\
+def concluding_statement():\
+    print()\
+    print("We hope this program was helpful. Ensure you are taking good care of yourself.")\
+    print()\
+    print("                                                         A HEALTHY ATTITUDE IS CONTAGIOUS BUT DON'T WAIT TO CATCH IT FROM OTHERS. BE A CARRIER.")\
+    print("                                                         --------------------------------------------------------------------------------------")\
+\
+#OUTPUT\
+user_information()\
+symptoms_types()\
+symp=int(input("(kindly enter the number under which category your symptoms fall): "))\
+print()\
+\
+while True: \
+    if symp==1:\
+        symptom_mostcommon()\
+        concluding_statement()\
+        break\
+    elif symp==2:\
+        symptom_lesscommon()\
+        concluding_statement()\
+        break\
+    elif symp==3:\
+        symptom_serious()\
+        break\
+    elif symp==4:\
+        symptom_none()\
+        concluding_statement()\
+        break\
+    else:\
+        print("Kindly enter a valid choice: ")\
+        continue\
+}

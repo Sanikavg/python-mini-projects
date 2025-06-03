@@ -1,10 +1,10 @@
-num=int(input("Enter a number: "))
+num=int(input("Enter a three digit number: "))
 sum=0
 temp=num
-ln=len(str(num))
+
 while (num>0):
     value=num%10
-    sum=sum+value**ln
+    sum=sum+value**3
     num=num//10
 
 if sum==temp:
